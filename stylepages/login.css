@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F2F2F2;
+}
+.top_element{
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px ;
+    width: 100%;
+    display: flex;   
+    flex-direction: column;
+    /* box-shadow: 1px 10px 1px 1px black; */
+    box-shadow: 0px 10px 10px 0px rgba(52, 51, 51, 0.51);
+}
+.logo_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.logo{   
+    width: 127px;
+    height: 127px;
+}
+.option_con{
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 18%;
+    font-family: 'Open Sans', sans-serif;
+     
+}
+.option_con a{
+    text-decoration: none;
+    color: black;
+}
+
+.line{
+    background-color: #3AFF71;
+    width: 134px;
+    height: 3px;
+    display: block;
+    margin: 0 8%; 
+   
+}
+
+.form1{
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+    justify-content: space-between;
+   
+}
+.form_group{
+   display: flex;
+   flex-direction: column;
+   margin: 10px 10px;
+}
+.form_group label{
+    font-size: 15px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.form_group input{
+    display: block;
+    margin-top: 15px;
+    border: none;
+    background-color: #F2F2F2;
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+.form_group input:focus{
+    outline: none;
+    
+}
+input:focus::placeholder {
+    color: transparent;
+  } 
+.fg{
+    margin-top: 15px;
+    color: #3AFF71;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+.login_btn{
+    margin-top: 20px;
+    background-color: #3AFF71;
+    color: #ffffff;
+    width: 314px;
+    height: 70px;
+    border-radius: 30px;
+    border: none;
+    font-size: 24px;
+}
+
+
+
+@media (min-width: 1020px) {
+
+.logo_div{
+    margin: 10px;
+}
+.logo{
+    width: 110px;
+    height: 110px;
+}
+.option_con{
+    margin: 3% 18%;
+}
+.line{
+    margin: 0 14%;
+}
+.form1{
+    margin-top: 5%;
+}
+}

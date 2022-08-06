@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Wlcome page style */
+body{
+    background-color: #3AFF71;
+}
+.welcome{
+    background-color: #3AFF71;
+    color: white;
+    
+    
+}
+.logo_img{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 40px 30px;
+}
+.welcome h1{
+    font-size: 65px;
+    margin-left: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.banner_img{
+    margin-top: 30px;
+    width: 500px;
+    height: 380px;
+    margin-left: -20px;
+}
+.get_btn{
+    width: 314px;
+    height: 70px;
+    border-radius: 30px;
+    background-color: white;
+    color: #3AFF71;
+    border: none;
+}
+.btn_con{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+
+@media (min-width: 1020px) {
+    .logo_img{
+        margin-left: 60px;
+    }
+    .content_con{
+        display: flex;
+        margin: 0px 40px;
+    }
+    .banner_img{
+        margin-left: 120px;
+        margin-top: -60px;
+    }
+
+}
+
+

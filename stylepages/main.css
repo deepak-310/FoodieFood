@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px;
+    
+    
+}
+.logo_con img{
+    width: 45px;
+    height: 45px;
+}
+.search_con{
+    display: flex;
+    flex-direction: column;
+}
+.search_con input{
+    width: 260px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 25px;
+    box-shadow: 0px 5px 20px 0px rgba(52, 51, 51, 0.51);
+    padding-left: 40px;
+
+}
+.search_con input:focus{
+    outline: none;
+}
+.search_con input::placeholder{
+ 
+}
+.search_logo{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 7px;
+    color: #3AFF71;
+    font-size: 28px;
+    
+}
+.cart{
+    display: flex;
+
+}
+.cart i {
+    font-size: 30px;
+}
+.cart .count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3AFF71;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+.Categories{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px 20px;
+}
+.Categories h1{
+    font-size: 20px;
+}
+.categorie_con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+.categorie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+
+}
+.categorie h3{
+    margin: 5px;
+    font-size: 13px;
+}
+.cat_con{
+    background-color: #F8CDFF;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+
+}
+.cat_con img{
+    width: 45px;
+    height: 45px;
+}
+
+.menu_head{
+    display: flex;
+    align-items: center;
+    background-color:#E6E6E6 ;
+    width: 100%;
+    height: 55px;
+    padding: 20px 10px;
+    margin-top: -20px;
+
+}
+.menu_head img{
+    width: 55px;
+    height: 55px;
+}
+.menu_head h3{
+    font-size: 18px;
+}
+
+.items{
+    display: flex;
+    margin: 10px 10px;
+}
+.image_con img{
+    width: 80px;
+    height: 80px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    border-bottom: 1px solid gray;
+    margin-left: 30px;
+    width: 60%;
+}
+.detail{
+    display:  flex;
+    flex-direction: column;
+    width: 50%;
+    
+}
+.detail p,h4{
+    font-size: 24px;
+}
+.addbtn{
+    margin-left: 20px;
+}
+.additem{
+    height: 40px;
+    width: 86px;
+    background-color: #ffffff;
+    color: #3AFF71;
+    font-size: 20px ;
+    border-radius: 21px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.fa-leaf{
+    font-size: 15px;
+    margin: 10px;
+    color: green;
+
+}
+.fa-drumstick-bite{
+    font-size: 15px;
+    margin: 10px;
+    color: red;
+
+}
+
+
+@media (min-width: 1020px) {
+    body{
+        margin: 0 100px;
+    }
+    .search_con input{
+        width: 360px;
+        font-size: 15px;
+    }
+    .detail {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+    }
+    .details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid gray;
+        margin-left: 30px;
+        width: 50%;
+    }
+}

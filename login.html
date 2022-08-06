@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylepages/login.css">
+</head>
+<body>
+    <div class="top_element">
+        <div class="logo_div">
+            <img src="img/logo2.png" class="logo" />
+        </div>
+        <div class="option_con">
+            <h3 id="log">Login</h3>
+            <a href="signup.html">
+                <h3 id="sig">Sign-up</h3>
+            </a>
+        </div>
+        <div class="line"></div>
+    </div>
+    <form class="form1" method="post" action="backend/loginbackend.php">
+        <div class="form_group">
+        <label class="lable1">Email Address</label>
+        <input type="text" name="email" placeholder="Enter Email ID" required="required" />
+
+        </div>
+        <div class="form_group">
+            <label class="lable2">Password</label>
+            <input type="password" name="password" placeholder="Enter Password" required="required"/>
+        </div>
+        <a class="fg" >Forgot Password ?</a>
+        <a src="main.html"> <button type="submit" class="login_btn">Login</button></a>
+    </form>
+
+
+</body>
+
+
+</html>
