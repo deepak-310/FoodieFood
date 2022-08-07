@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             }
             else{
             $count=count($_SESSION['cart']);
-            $_SESSION['cart'][$count]=array('name'=>$_POST['name'],'price'=>$_POST['price'],'qnt'=>1);
+            $_SESSION['cart'][$count]=array('name'=>$_POST['name'],'price'=>$_POST['price'],'fid'=>$_POST['fid'],'qnt'=>1);
             ?>
             <script>
               alert('Food Added To Your Cart');
@@ -38,7 +38,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
     if(isset($_POST['removefood'])){
       foreach($_SESSION['cart'] as $key => $value){ 
-       print_r($key);
         if($value['name']==$_POST['foodname']){
           unset($_SESSION['cart'][$key]);
           $_SESSION['cart']=array_values($_SESSION['cart']);
@@ -48,12 +47,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             window.location.assign('cart.php')
           </script>
             <?php
-
         }
-       
-      
       }
       
+    }
+    if(isset($_POST['modqnt'])){
+      foreach($_SESSION['cart'] as $key => $value){ 
+         if($value['name']==$_POST['foodname']){
+          $_SESSION['cart'][$key]['qnt']=$_POST['modqnt'];
+           ?>
+           <script>
+             window.location.assign('cart.php')
+           </script>
+             <?php
+         }
+       }
+
     }
 }
 

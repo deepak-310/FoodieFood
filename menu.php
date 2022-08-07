@@ -67,6 +67,8 @@ while($res =mysqli_fetch_array($query))
                 </div>
                 <input type="hidden" name="name" value="<?php echo $res['name']; ?>" >
                 <input type="hidden" name="price" value="<?php echo $res['price']; ?>" >
+                <input type="hidden" name="fid" value="<?php echo $res['id']; ?>" >
+                
 
                 <div class="addbtn">
                     <button type="submit" name="addToCart" class="additem">+ADD</button>

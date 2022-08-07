@@ -25,7 +25,7 @@ session_start();
     <?php
     $Gtotal=0;
     $total=0;
-    if(isset($_SESSION['cart'])){
+    if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0){
         ?><h1 class="head">Orders</h1>
         <?php
     foreach($_SESSION['cart'] as $key => $value){
@@ -48,7 +48,10 @@ session_start();
                     </form>
                 </div>
                 <div class="item_actons">
-                    <input id=fqnt class="itemcount" onchange="subTotal()" type=number value="1" min=1 max=10>
+                    <form action="manage_cart.php" method="post">
+                       <input id="fqnt" name="modqnt" class="itemcount" onchange="this.form.submit()" type="number" value="<?php echo"$value[qnt]" ?>" min=1 max=10>
+                       <input type="hidden" name="foodname" value="<?php echo"$value[name]" ?>">                   
+                    </form>
                 </div>
                 <div class="item_total">
                     <h3>₹</h3>

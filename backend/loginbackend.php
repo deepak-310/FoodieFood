@@ -11,7 +11,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     if($row=mysqli_fetch_array($result))
     {
         $_SESSION["name"]=$row['name'];
+        $_SESSION["userID"]=$row['id'];
         $_SESSION["email"]=$email;
+
         $email=$_SESSION['email'];
         $_SESSION['status']="login";
         header("location:../menu.php");
