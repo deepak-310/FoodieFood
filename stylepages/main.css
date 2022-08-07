@@ -48,6 +48,9 @@ header{
 }
 .cart{
     display: flex;
+    text-decoration: none;
+    color: black;
+
 
 }
 .cart i {
