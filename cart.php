@@ -70,29 +70,39 @@ session_start();
    
         <form method="post" action="#">
             <div class="dev_methods">
-            <div class="delivery">
-                <input type="radio" id="delivery" name="method" value="delivery">
-                <label for="delivery">Class delivery</label>
+                <div class="delivery">
+                    <input type="radio" id="delivery" name="method" value="delivery">
+                    <label for="delivery">Class delivery</label>
+                </div>
+                <hr>
+                <div class="pickup">
+                    <input type="radio" id="pickup" name="method" value="pickup">
+                    <label for="pickup">Pick Up</label>
+                </div>
             </div>
-            <hr>
-            <div class="pickup">
-                <input type="radio" id="pickup" name="method" value="pickup">
-                <label for="pickup">Pick Up</label>
+            <h1 class="head">Payment method.</h1>
+            <div class="pay_methods">
+                
+                <div class="razer_pay">
+                    <input type="radio" id="razorpay" name="paym" value="razorpay">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/razorpay-icon.svg" class="razorimg">
+                </div>
+                <div class="COD">
+                    <input type="radio" id="cod" name="paym" value="COD">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/banking-finance/payment-icon.svg" class="codimg">
+                    <h4>Cash</h4> 
+                </div>
             </div>
-        </div>
-        </form>
-   
-    <div class="total_sumamry">
+        <div class="total_sumamry">
         <div><h3>Total</h3></div>
         <div style="display: flex;"><h3>₹</h3><h3 id="gtotal"></h3></div>
-        
     </div>
     <div class="proceed_con">
-        <button class="proccedbtn">
-            Proceed to payment
-        </button>
-
+        <button class="proccedbtn" type="submit">Proceed to payment</button>
     </div>
+        </form>
+   
+    
 
 <?php
 
