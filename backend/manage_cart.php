@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 ?>
         <script>
           alert('This Item Is Already Present In You Cart');
-          window.location.assign('menu.php')
+          window.location.assign('../menu.php')
         </script>
           <?php
             }
@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             ?>
             <script>
               alert('Food Added To Your Cart');
-              window.location.assign('menu.php')
+              window.location.assign('../menu.php')
             </script>
               <?php
         }
@@ -27,11 +27,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }
         else
         {
-            $_SESSION['cart'][0]=array('name'=>$_POST['name'],'price'=>$_POST['price'],'qnt'=>1);
+            $_SESSION['cart'][0]=array('name'=>$_POST['name'],'price'=>$_POST['price'],'fid'=>$_POST['fid'],'qnt'=>1);
             ?>
             <script>
               alert('Food Added To Your Cart');
-              window.location.assign('menu.php')
+              window.location.assign('../menu.php')
             </script>
               <?php
         }
@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
           ?>
           <script>
             alert('Food Is Removed From Cart');
-            window.location.assign('cart.php')
+            window.location.assign('../cart.php')
           </script>
             <?php
         }
@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
           $_SESSION['cart'][$key]['qnt']=$_POST['modqnt'];
            ?>
            <script>
-             window.location.assign('cart.php')
+             window.location.assign('../cart.php')
            </script>
              <?php
          }

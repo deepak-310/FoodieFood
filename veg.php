@@ -41,7 +41,7 @@ $query= mysqli_query($conn,$selectquery);
 $nums=mysqli_num_rows($query);
 while($res =mysqli_fetch_array($query))
 {
-?>  <form method="POST" action="manage_cart.php">
+?>  <form method="POST" action="backend/manage_cart.php">
 <div class="items">
     <div class="image_con">
         <img src="<?php echo $res['img']; ?>"/>
@@ -67,6 +67,7 @@ while($res =mysqli_fetch_array($query))
         </div>
         <input type="hidden" name="name" value="<?php echo $res['name']; ?>" >
         <input type="hidden" name="price" value="<?php echo $res['price']; ?>" >
+        <input type="hidden" name="fid" value="<?php echo $res['id']; ?>" >
 
         <div class="addbtn">
             <button type="submit" name="addToCart" class="additem">+ADD</button>

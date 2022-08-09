@@ -29,15 +29,22 @@ if(isset($_SESSION['cart'])){
          
             <i class="fa-solid fa-magnifying-glass search_logo"></i>
         </div>
+       
+        <div class="user_action_con">
+        
         <a href="cart.php">
         <div class="cart">
             <i class="fa-solid fa-bag-shopping"></i>
-            
            <div class="count">
             <h3><?php echo $count; ?></h3>
            </div>
         </div>
-    </a>
+        </a>
+        <a href="user.php" class="user">
+            <i class="fa-solid fa-user"></i>
+        </a>
+    </div>
+      
     </header>
     <div class="Categories">
         <h1>Categories</h1>

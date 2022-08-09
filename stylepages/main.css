@@ -23,7 +23,7 @@ header{
     flex-direction: column;
 }
 .search_con input{
-    width: 260px;
+    width: 200px;
     height: 40px;
     border: 1px solid gray;
     border-radius: 25px;
@@ -44,6 +44,18 @@ header{
     margin: 7px;
     color: #3AFF71;
     font-size: 28px;
+    
+}
+.user_action_con{
+    display: flex;
+}
+.user{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 18px;
+}
+.fa-user{
     
 }
 .cart{
@@ -198,5 +210,8 @@ header{
         border-bottom: 1px solid gray;
         margin-left: 30px;
         width: 50%;
+    }
+    .user{
+        margin-left: 40px;
     }
 }

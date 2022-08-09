@@ -13,8 +13,8 @@ session_start();
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -42,13 +42,13 @@ session_start();
             </div>
             <div class="item_right">
                 <div class="remove_div">
-                <form action="manage_cart.php" method="post">
+                <form action="backend/manage_cart.php" method="post">
                     <button class="delet_btn" name="removefood"><i class="fas fa-trash-alt"></i></button>
                     <input type="hidden" name="foodname" value="<?php echo"$value[name]" ?>">
                     </form>
                 </div>
                 <div class="item_actons">
-                    <form action="manage_cart.php" method="post">
+                    <form action="backend/manage_cart.php" method="post">
                        <input id="fqnt" name="modqnt" class="itemcount" onchange="this.form.submit()" type="number" value="<?php echo"$value[qnt]" ?>" min=1 max=10>
                        <input type="hidden" name="foodname" value="<?php echo"$value[name]" ?>">                   
                     </form>
@@ -68,15 +68,15 @@ session_start();
 
 <h1 class="head">Delivery method.</h1>
    
-        <form method="post" action="#">
+        <form method="post" action="payment.php">
             <div class="dev_methods">
                 <div class="delivery">
-                    <input type="radio" id="delivery" name="method" value="delivery">
+                    <input type="radio" id="delivery" name="method" value="delivery" required="required">
                     <label for="delivery">Class delivery</label>
                 </div>
                 <hr>
                 <div class="pickup">
-                    <input type="radio" id="pickup" name="method" value="pickup">
+                    <input type="radio" id="pickup" name="method" value="pickup" required="required">
                     <label for="pickup">Pick Up</label>
                 </div>
             </div>
@@ -84,11 +84,11 @@ session_start();
             <div class="pay_methods">
                 
                 <div class="razer_pay">
-                    <input type="radio" id="razorpay" name="paym" value="razorpay">
+                    <input type="radio" id="razorpay" name="paym" value="razorpay" required="required">
                     <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/razorpay-icon.svg" class="razorimg">
                 </div>
                 <div class="COD">
-                    <input type="radio" id="cod" name="paym" value="COD">
+                    <input type="radio" id="cod" name="paym" value="COD" required="required">
                     <img src="https://uxwing.com/wp-content/themes/uxwing/download/banking-finance/payment-icon.svg" class="codimg">
                     <h4>Cash</h4> 
                 </div>
@@ -131,14 +131,6 @@ else{
     
     
     <script>
-    function increment() {
-      var a= document.getElementById('fqnt').stepUp();
-      
-    
-    }
-    function decrement() {
-       document.getElementById('fqnt').stepDown();
-    }
 var gt=0;
 var price=document.getElementsByClassName('fprice');
 var qnt=document.getElementsByClassName('itemcount');
