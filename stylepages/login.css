@@ -97,6 +97,19 @@ input:focus::placeholder {
     border: none;
     font-size: 24px;
 }
+.foodmeal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.foodmeal img{
+    width: 300px;
+    height: 201px;
+    position: absolute;
+    z-index: -1;
+    margin-top: 70px;
+}
+
 
 
 
@@ -117,5 +130,8 @@ input:focus::placeholder {
 }
 .form1{
     margin-top: 5%;
+}
+.foodmeal{
+    display: none;
 }
 }

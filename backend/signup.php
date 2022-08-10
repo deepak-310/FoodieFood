@@ -5,7 +5,6 @@ $email = $_POST['emailid'];
 $phone =$_POST['phoneno'];
 $adno = $_POST['admission_no'];
 $password =$_POST['password'];
-$phc='/^[0-9]{10,10}$/';
 
 $query = "INSERT into users values(NULL,'$name','$email','$phone','$adno',md5('$password'))";
 $query2="select * from users where email='$email'";
@@ -23,25 +22,17 @@ if($present>0){
 elseif(strpos($email,'student') == false){
     ?>
     <script>
-      alert('You Can use only MES ID for login');
+      alert('You Can Only Use MES ID For SingUp ');
       window.location.assign('../signup.html')
     </script>
       <?php
 
 }
-elseif(preg_match( $phc,$phone)==false){
-    ?>
-    <script>
-      alert('Please Enter Valid Phone Number');
-      window.location.assign('../signup.html')
-    </script>
-      <?php
-}
 else{
 if (mysqli_query($conn, $query)) {
     ?>
     <script>
-      alert('User Added Successfully');
+      alert('<?php $name ?> Your SignUp is succeful');
       window.location.assign('../login.html')
     </script>
       <?php

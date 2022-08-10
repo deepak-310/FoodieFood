@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION["email"]))
+{
+  header("location:login.html");
+  unset($_SESSION['email']);
+}
 include 'connection.php';
 $useid=$_SESSION['userID'];
 $Gtotal=0;

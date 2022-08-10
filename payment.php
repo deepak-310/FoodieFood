@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION["email"]))
+{
+  header("location:login.html");
+  unset($_SESSION['email']);
+}
 $divmethod=$_POST['method'];
 $paymethod=$_POST['paym'];
 $Gtotal=0;
@@ -71,7 +76,7 @@ foreach($_SESSION['cart'] as $key => $value){
             else{
                 ?>
 
-                <button class="proccedbtn" type="submit">
+                <button class="proccedbtn" type="submit" onclick="return checklogout()">
                     Proceed to payment
                 </button>
                 <?php
@@ -83,8 +88,11 @@ foreach($_SESSION['cart'] as $key => $value){
 
     </div>
         </form>
-    
 
-    
 </body>
+<script>
+  function checklogout(){
+    return confirm("Are you Want to confirm Your Order?")
+  }
+</script>
 </html>

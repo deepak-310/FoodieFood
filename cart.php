@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION["email"]))
+{
+  header("location:login.html");
+  unset($_SESSION['email']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,20 +106,16 @@ session_start();
         <button class="proccedbtn" type="submit">Proceed to payment</button>
     </div>
         </form>
-   
-    
-
 <?php
-
 
 }
 else{
     ?>
     <div class="empty_cart">
-        <img src="img/ecart.png">
+        <img src="img/emptycart.png">
         <h1>Cart Is Empty</h1>
         <p>Hit the green button down<br>
-            below to Create an order</p>
+            below to Select Your fav Food</p>
             <div class="btn_contener">
                 <a href="menu.php" >Start Ordering</a>
             </div>
@@ -122,9 +123,7 @@ else{
     </div>
 
 <?php
-
-
-    
+   
 }
 
 ?>
