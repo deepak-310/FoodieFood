@@ -8,7 +8,7 @@ if($row=mysqli_fetch_array($result)){
     $name=$row['name'];
     $email=$row['email'];
     $phone=$row['phone'];
-    $gender=$row['gander'];
+    $gender=$row['gender'];
 
 }
 

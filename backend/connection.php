@@ -2,7 +2,7 @@
  $serevername="localhost:3305";
  $username="root";
  $password="";
- $dbase="foodiefood";
+ $dbase="foodiefood1";
   
  $conn = mysqli_connect($serevername,$username,$password,$dbase);
  if(!$conn){
