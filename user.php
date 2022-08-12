@@ -8,6 +8,7 @@ if($row=mysqli_fetch_array($result)){
     $name=$row['name'];
     $email=$row['email'];
     $phone=$row['phone'];
+    $gender=$row['gander'];
 
 }
 
@@ -39,7 +40,24 @@ if($row=mysqli_fetch_array($result)){
     </header>
     <div class="user_info">
         <div class="uer_icon">
-            <img src="img/user.png" class="userimg"> 
+            <?php 
+                if($gender=='male')
+                {
+                    ?>
+                     <img src="img/user.png" class="userimg"> 
+                    <?php
+                    }
+                    else{
+                        ?>
+                     <img src="img/female.png" class="userimg"> 
+                    <?php
+
+
+                    }
+
+                
+            ?>
+           
 
         </div>
         <div class="userinfo">

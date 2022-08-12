@@ -25,6 +25,27 @@ body{
     width: 127px;
     height: 127px;
 }
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.gender{
+    display: flex;
+    align-items: center;
+ 
+}
+.gender label{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+#female{
+    margin-left: 20px;
+}
 .option_con{
     display: flex;
     justify-content: space-between;
@@ -59,7 +80,7 @@ body{
    margin: 10px 10px;
 }
 .form_group label{
-    font-size: 15px;
+    font-size: 20px;
     color: black;
     font-family: 'Open Sans', sans-serif;
 
