@@ -11,10 +11,6 @@ if($row=mysqli_fetch_array($result)){
     $gender=$row['gender'];
 
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -51,13 +47,8 @@ if($row=mysqli_fetch_array($result)){
                         ?>
                      <img src="img/female.png" class="userimg"> 
                     <?php
-
-
                     }
-
-                
             ?>
-           
 
         </div>
         <div class="userinfo">
@@ -69,13 +60,17 @@ if($row=mysqli_fetch_array($result)){
     </div>
     <h2 class="uorder">Your Orders</h2>
     <?php
-            $selectquery ="select * from orders where user_id='$user_id';";
+            $selectquery ="select * from orders where user_id='$user_id' order by ord_id Desc;";
             $query= mysqli_query($conn,$selectquery);
             $nums=mysqli_num_rows($query);
             while($res =mysqli_fetch_array($query))
             {
             ?>
                 <div class="myorders">
+                <div class="foods">
+                        <h3>ORDER ID:</h3>
+                        <h4><?php echo $res['ord_id']; ?> </h4>
+                    </div>
                     <div class="foods">
                         <h3>FOODS:</h3>
                         <h4><?php echo $res['food_name']; ?> </h4>

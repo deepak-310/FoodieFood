@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+body{
+    background-color: #F4F4F7;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3AFF71;
+    height: 80px;
+    color: white;
+    width: 100%;
+}
+.header_left img{
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+}
+.header_right{
+    display: flex;
+    align-items: center;
+  
+}
+.links{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    margin-right: 40px;
+   
+}
+.links a{
+    padding-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.links a i{
+    margin-right: 5px;
+}
+.admininfo{
+    display: flex;
+    align-items: center;
+ 
+}
+.admin_img img{
+    width: 60px;
+    height: 60px;
+}
+.admin_detail{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+    margin-right: 50px;
+}
+.admin_detail h3{
+    font-size: 20px;
+}
+.admin_detail h4{
+    font-size: 15px;
+}
+
+.dashbord_cont{
+    margin: 20px;
+  
+}
+.message{
+    margin-left: 30px;
+    /* background-color: white; */
+    padding: 10px;
+   
+}
+.message h3{
+    font-size: 30px;
+}
+.dash_funtions_cont{
+   
+    margin: 40px 0px;
+}
+.row1, .row2{
+    display: flex;
+
+}
+.row1 a,.row2 a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 500px;
+    height: 150px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 20px;
+}
+.left_op{
+    margin-left: 40px;
+}
+.left_op h2{
+    font-size: 40px;
+}
+
+.right_op{
+    margin-right: 40px;
+}
+.img_op{
+    background-color: #3AFF71;
+    border-radius: 50%;
+
+}
+.img_op{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_op1{
+    width: 70px;
+    height: 70px;
+}
+.img_op2{
+    width: 55px;
+    height: 55px;
+}
+.img_op3{
+    width: 60px;
+    height: 60px;
+}
+.img_op4{
+    width: 47px;
+    height: 70px;
+}
+
+.Heading{
+    margin: 20px;
+}
+/* Table css */
+.table_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.Marks_entry_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+  }
+  
+  .Marks_entry_table td, .Marks_entry_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }  
+.Marks_entry_table td input{
+    width: 60%;
+    height: 30px;
+}
+  .Marks_entry_table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .Marks_entry_table tr:hover {background-color: #ddd;}
+  
+  .Marks_entry_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3AFF71;
+    color: white;
+  }
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+  /* Button Css */
+  
+  .edit_btn{
+    background-color: #3AFF71;
+    border-radius: 50%;
+    border: none;
+  }
+  .edit_btn2{
+    background-color: red;
+    border-radius: 50%;
+    border: none;
+  }
+
+
+@media (max-width: 400px){
+    
+
+    header{
+        height: 60px;
+        width: 100%;
+
+    }
+    
+    .header_left img{
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+    }
+    .links{
+        margin-right: 10px;
+    }
+    .links a{
+        font-size: 15px;
+        padding: 5px;
+    }
+    .admin_img img{
+        width: 40px;
+        height: 40px;
+    }
+    .admin_detail h3{
+        font-size: 15px;
+    }
+    .admin_detail h4{
+        font-size: 10px;
+    }
+    .admin_detail{
+        margin-right: 20px;
+    }
+    .dashbord_cont{
+        margin: 10px;
+    }
+    .option{
+        width: 330px;
+        height: 100px;
+    }
+    .row1, .row2{
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .left_op h2{
+        font-size: 30px;
+    }
+
+}

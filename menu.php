@@ -4,7 +4,7 @@ if(!isset($_SESSION["email"]))
 {
   header("location:login.html");
   unset($_SESSION['email']);
-}
+}   
 if(isset($_SESSION['status'])){
 ?>
 <script>

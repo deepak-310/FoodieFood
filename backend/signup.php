@@ -6,8 +6,9 @@ $phone =$_POST['phoneno'];
 $adno = $_POST['admission_no'];
 $password =$_POST['password'];
 $gender=$_POST['gender'];
+$type='Customer';
 
-$query = "INSERT into users values(NULL,'$name','$email','$phone','$adno',md5('$password'),'$gender')";
+$query = "INSERT into users values(NULL,'$name','$email','$phone','$adno',md5('$password'),'$gender','$type')";
 $query2="select * from users where email='$email'";
 $result=mysqli_query($conn,$query2);
 $present=mysqli_num_rows($result);

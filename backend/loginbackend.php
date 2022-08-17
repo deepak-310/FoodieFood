@@ -12,11 +12,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $_SESSION["name"]=$row['name'];
         $_SESSION["userID"]=$row['id'];
+        $type=$row['type'];
         $_SESSION["email"]=$email;
-
         $email=$_SESSION['email'];
         $_SESSION['status']="login";
-        header("location:../menu.php");
+        if($type=='Admin'){
+          $_SESSION['type']=$row['type'];
+          header("location:../admin.php");
+        }
+        else{
+          header("location:../menu.php");
+
+        }
+        
     }
 
     else{

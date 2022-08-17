@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3305
--- Generation Time: Aug 10, 2022 at 02:15 PM
+-- Generation Time: Aug 17, 2022 at 12:41 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `foodiefood`
+-- Database: `foodiefood1`
 --
 
 -- --------------------------------------------------------
@@ -100,17 +100,30 @@ CREATE TABLE `orders` (
   `paymethod` varchar(50) NOT NULL,
   `time` varchar(50) NOT NULL,
   `class` varchar(50) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `order_time` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`ord_id`, `user_id`, `food_name`, `total_amt`, `type`, `paymethod`, `time`, `class`, `date`) VALUES
-(9, 2, ' Misal Pav( 1)  Cold Coffee ( 2)  Samosa( 2)  ', 126, 'delivery', 'COD', '10Am', 'O101', '2022-08-09'),
-(10, 2, ' Misal Pav( 2)  ', 80, 'pickup', 'COD', '10:30pm', 'Null', '2022-08-09'),
-(11, 2, ' Bhurji Pav( 3)  ', 105, 'pickup', 'COD', '10:30Am', 'Null', '2022-08-09');
+INSERT INTO `orders` (`ord_id`, `user_id`, `food_name`, `total_amt`, `type`, `paymethod`, `time`, `class`, `date`, `order_time`, `status`) VALUES
+(9, 2, ' Misal Pav( 1)  Cold Coffee ( 2)  Samosa( 2)  ', 126, 'delivery', 'COD', '10Am', 'O101', '2022-08-09', '', 'Delivery'),
+(10, 2, ' Misal Pav( 2)  ', 80, 'pickup', 'COD', '10:30pm', 'Null', '2022-08-09', '', ''),
+(11, 2, ' Bhurji Pav( 3)  ', 105, 'pickup', 'COD', '10:30Am', 'Null', '2022-08-09', '', ''),
+(12, 2, ' Omlette pav( 1)  Pepsi( 1)  ', 67, 'delivery', 'COD', '10Am', 'G606', '2022-08-12', '', ''),
+(13, 2, ' Cold Coffee ( 2)  ', 60, 'delivery', 'COD', '10Am', 'G606', '2022-08-14', '', ''),
+(14, 3, ' Vada Pav( 1)  Chicken Shawarma( 1)  ', 73, 'pickup', 'COD', '10Am', 'Null', '2022-08-15', '', 'Delivery'),
+(15, 3, ' Misal Pav( 1)  CocaCola( 1)  ', 68, 'delivery', 'COD', '10Am', 'G303', '2022-08-15', '12:38:02', 'Delivery'),
+(16, 2, ' Panner Butter ( 3)  Butter Chicken ( 3)  Pepsi( 4)  ', 848, 'delivery', 'COD', '10:30Am', 'G303', '2022-08-15', '19:53:30', 'NotDelivery'),
+(17, 2, ' Masala Dosa( 1)  Pepsi( 1)  ', 77, 'delivery', 'COD', '11Am', 'O101', '2022-08-15', '00:14:31', 'Delivery'),
+(18, 2, ' Toast Butter( 1)  ', 25, 'pickup', 'COD', '10:30pm', '-', '2022-08-15', '00:33:56', 'Proccessing'),
+(19, 3, ' Pav Bhaji( 1)  Chicken Biryani ( 1)  Pepsi( 2)  ', 254, 'pickup', 'COD', '11Am', '-', '2022-08-16', '10:59:02', 'Delivery'),
+(20, 2, ' Misal Pav( 1)  cheese Masala Dosa( 1)  ', 80, 'delivery', 'COD', '11:30Am', 'G303', '2022-08-16', '10:59:52', 'NotDelivery'),
+(21, 4, ' Chicken Shawarma( 1)  Veg Manchow Soup ( 1)  Pepsi( 1)  ', 152, 'delivery', 'COD', '11:30Am', 'G606', '2022-08-16', '11:06:25', 'Delivery'),
+(22, 2, ' Misal Pav( 1)  Masala Dosa( 2)  ', 130, 'pickup', 'COD', '10Am', '-', '2022-08-17', '14:49:19', 'NotDelivery');
 
 -- --------------------------------------------------------
 
@@ -122,18 +135,22 @@ CREATE TABLE `users` (
   `id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `phone` int(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
   `admissionNo` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `type` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `phone`, `admissionNo`, `password`) VALUES
-(1, 'Deepak', 'deepak@student.mes.ac.in', 2147483647, '2020PC0295', '81dc9bdb52d04dc20036dbd8313ed055'),
-(2, 'krishnakant', 'krishnakant@student.mes.ac.in', 2147483647, '2020PC0987', '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO `users` (`id`, `name`, `email`, `phone`, `admissionNo`, `password`, `gender`, `type`) VALUES
+(1, 'Deepak', 'deepak@student.mes.ac.in', '9819257667', '2020PC0295', '81dc9bdb52d04dc20036dbd8313ed055', 'male', 'Admin'),
+(2, 'krishnakant', 'krishnakant@student.mes.ac.in', '0987654356', '2020PC0987', '81dc9bdb52d04dc20036dbd8313ed055', 'male', 'Customer'),
+(3, 'Nupoor', 'nupoor@student.mes.ac.in', '1234567894', '2020PC0396', 'e15df6a87469376d09a7d4cb46cdccaf', 'female', 'Customer'),
+(4, 'Prasad', 'prasadbelote16@student.mes.ac.in', '9876543276', '2020PC7896', 'f09883b57b33d3d33c39bbc8dd3b2be2', 'male', 'Customer');
 
 --
 -- Indexes for dumped tables
@@ -171,13 +188,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ord_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ord_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
