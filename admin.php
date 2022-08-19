@@ -42,11 +42,7 @@ $total_r=mysqli_query($conn,$qury4);
 while($row=mysqli_fetch_assoc($total_r)){
     $total_revenu =$row['sum'];
 }
-
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,7 +89,7 @@ while($row=mysqli_fetch_assoc($total_r)){
         
         <div class="dash_funtions_cont">
             <div class="row1">
-                <a href="#" >
+                <a href="menus.php" >
                     <div class="option">
                         <div class="left_op">
                             <h2><?php echo $total_menu; ?></h2>
