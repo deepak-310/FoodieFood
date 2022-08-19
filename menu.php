@@ -23,6 +23,7 @@ unset($_SESSION['status']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f1fe65a302.js" crossorigin="anonymous"></script>
      <link rel="stylesheet" href="stylepages/main.css">
+     <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
     <title>main</title>
 </head>
 <body>

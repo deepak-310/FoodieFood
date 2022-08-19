@@ -15,7 +15,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
-
+    <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
     <style>
 
 .heading{
