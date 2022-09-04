@@ -69,7 +69,7 @@ if($row=mysqli_fetch_array($result)){
             ?>
                 <div class="myorders">
                 <div class="foods">
-                        <h3>ORDER ID:</h3>
+                        <h3 style="display:flex;">ORDER ID: </h3>
                         <h4><?php echo $res['ord_id']; ?> </h4>
                     </div>
                     <div class="foods">
@@ -80,6 +80,12 @@ if($row=mysqli_fetch_array($result)){
                         <h3>DATE:</h3>
                         <h4><?php echo $res['date']; ?> </h4>
                     </div>
+                    <div class="foods">
+                        <h3>STATUS:</h3>
+                        <h4><?php echo $res['status']; ?> </h4>
+                    </div>
+                    
+
                     <div class="totalprice">
                         <h3 style="color: #3AFF71;">TOTAL:</h3>
                         <h3>₹<?php echo $res['total_amt']; ?></h3>
@@ -92,7 +98,7 @@ if($row=mysqli_fetch_array($result)){
             <img src="img/logout.png">
         </div>
         <div class="logoutbtn">
-            <a href="backend/logout.php" onclick="return checklogout()"> <button class="login_btn">Login</button></a>
+            <a href="backend/logout.php" onclick="return checklogout()"> <button class="login_btn">Logout</button></a>
         </div>
 
     </div>

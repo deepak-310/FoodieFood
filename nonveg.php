@@ -31,8 +31,8 @@ unset($_SESSION['status']);
 <body>
 <?php include("header.php") ?>
     <div class="menu_head">
-        <img src="img/veg.png" />
-        <h3>Veg</h3>
+        <img src="img/nonveg.png" />
+        <h3>Non Veg</h3>
     </div>
     <div class="menu_contener">
     <?php

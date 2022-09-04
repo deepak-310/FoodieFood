@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $_SESSION['cart'][$count]=array('name'=>$_POST['name'],'price'=>$_POST['price'],'fid'=>$_POST['fid'],'qnt'=>1);
             ?>
             <script>
-              alert('Food Added To Your Cart');
+              // alert('Food Added To Your Cart');
               window.location.assign('../menu.php')
             </script>
               <?php
@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $_SESSION['cart'][0]=array('name'=>$_POST['name'],'price'=>$_POST['price'],'fid'=>$_POST['fid'],'qnt'=>1);
             ?>
             <script>
-              alert('Food Added To Your Cart');
+              // alert('Food Added To Your Cart');
               window.location.assign('../menu.php')
             </script>
               <?php
@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
           $_SESSION['cart']=array_values($_SESSION['cart']);
           ?>
           <script>
-            alert('Food Is Removed From Cart');
+            // alert('Food Is Removed From Cart');
             window.location.assign('../cart.php')
           </script>
             <?php

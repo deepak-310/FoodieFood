@@ -114,8 +114,8 @@ session_start();
             <td><?php echo $res['type']; ?></td>
             <td><?php echo $res['content']; ?></td>
             <td>
-            <a href="editbranch.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" title="EDIT"><button class="edit_btn"><i class="fa-solid fa-pen"></i></button></a>
-            <a href="backend/deletefood.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" title="DELETE"><button class="delet_btn"><i class="fa-solid fa-trash"></i></button></a>
+            <a href="editmenu.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" title="EDIT"><button class="edit_btn"><i class="fa-solid fa-pen"></i></button></a>
+            <a href="backend/deletefood.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" onclick="return checkdelete()"  title="DELETE"><button class="delet_btn"><i class="fa-solid fa-trash"></i></button></a>
             </td>
           </tr>
 
@@ -127,8 +127,11 @@ session_start();
     </div>
 </body>
 <script>
-  function checklogout(){
+   function checklogout(){
     return confirm("Are you sure you want to logout?")
+  }
+  function checkdelete(){
+    return confirm("Are you sure you want to Delete this FoodMenu?")
   }
 </script>
 </html>

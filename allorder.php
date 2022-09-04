@@ -17,44 +17,11 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
-    
-
-    <style>
-        .actions{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-           
-        }
-        .action_btn{
-            margin-left:20px;
-            margin-top: 20px;
-            background-color: #3AFF71;
-            color: #ffffff;
-            width: 170px;
-            height: 40px;
-            border-radius: 30px;
-            border: none;
-            font-size: 15px;
-        }
-        .print{
-            margin-left:20px;
-            margin-top: 20px;
-            background-color: #3AFF71;
-            color: #ffffff;
-            width: 170px;
-            height: 40px;
-            border-radius: 30px;
-            border: none;
-            font-size: 15px;
-        }
-
-</style>
 </head>
 <body>
     <header>
         <div class="header_left">
-           <a href="admin.php"> <img src="img/logo2.png"></a>
+        <a href="admin.php"> <img src="img/logo2.png"></a>
 
         </div>
         <div class="header_right">
@@ -75,10 +42,10 @@ session_start();
 
         </div>
     </header>
-    <h1 class="Heading">Orders</h1>
+    <h1 class="Heading"><a href="orders.php"><i class="fas fa-arrow-left" style="color:black;font-weight:300px;font-size:30px;  color: rgb(68, 66, 66);margin-right:10px"></i></a>Orders</h1>
 
     <div class="table_content" id="marks_table">
-        <table class="Marks_entry_table" id="orders">
+        <table class="Marks_entry_table">
           <tr>
             <th>OrderID</th>
             <th>Date</th>
@@ -96,8 +63,7 @@ session_start();
           <?php
 
             include 'backend/connection.php';
-            $date=date('Y-m-d');
-            $selectquery ="select * from orders where date='$date'";
+            $selectquery ="select * from orders order by ord_id Desc";
             $query= mysqli_query($conn,$selectquery);
             $nums=mysqli_num_rows($query);
             while($res =mysqli_fetch_array($query))
@@ -146,15 +112,8 @@ session_start();
             
         </table>
     </div>
-    <div class="actions">
-            <a href="allorder.php"> <button class="action_btn">SHOW ALL ORDERS</button></a>
-            <!-- <button class="print">PRINT</button> -->
-    </div>
-
 </body>
-
 <script>
-
   function checklogout(){
     return confirm("Are you sure you want to logout?")
   }

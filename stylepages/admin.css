@@ -80,7 +80,10 @@ header{
 }
 .dash_funtions_cont{
    
-    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .row1, .row2{
     display: flex;
@@ -198,6 +201,14 @@ input::-webkit-inner-spin-button {
     border: none;
   }
  
+  @media (max-width: 730px){
+    .option{
+        width: 330px;
+        height: 130px;
+    }
+
+
+  }
 
 @media (max-width: 400px){
     
