@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="stylepages/login.css">
+    <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
+    <style>
+        .line{
+            margin: 0 55%;
+        }
+        @media (min-width: 1020px){
+            .line{
+                margin: 0 74%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top_element">
+        <div class="logo_div">
+            <img src="img/logo2.png" class="logo" />
+          
+        </div>
+        <div class="option_con">
+            <a href="login.html"><h3 id="log">Login</h3></a>
+            <h3 id="signup.html">Sign-up</h3>
+        </div>
+    </div>
+    
+    <form class="form1" method="post" action="backend/forgotpass_back.php">
+        <!-- <h3 >Forgot Password</h3> -->
+        <div class="form_group">
+            <label class="lable1">Email Address</label>
+            <input type="email" name="emailid" placeholder="Enter Email ID" required="required"/>
+            </div>
+        <div class="form_group">
+            <label class="lable2">Phone Number</label>
+            <input type="number" name="phoneno" minlength="10" maxlength="10" placeholder="Enter Phone Number" required="required"/>
+        </div>
+       
+        <div class="form_group">
+            <label class="lable2">New Password</label>
+            <input type="password" name="password" placeholder="Enter Password" required="required"/>
+        </div>
+        <div class="form_group">
+            <label class="lable2">Confirm Password</label>
+            <input type="text" id="addno"  name="cpass" placeholder="Enter Confirm Password" required="required"/>
+        </div>
+        
+            
+        </div>
+        
+        <button type="submit" class="login_btn">Update Password</button>
+    </form>
+
+
+</body>
+<script>
+    function cap(){
+        var x =document.getElementById("addno");
+        x.value=x.value.toUpperCase();
+
+    }
+</script>
+
+
+</html>

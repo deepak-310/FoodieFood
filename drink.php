@@ -44,7 +44,7 @@ $nums=mysqli_num_rows($query);
 while($res =mysqli_fetch_array($query))
 {
 ?>
-       <form method="POST" action="backend/manage_cart.php">
+       <form method="POST" action="backend/manage_cart.php?page=drink">
 <div class="items">
     <div class="image_con">
         <img src="<?php echo $res['img']; ?>"/>

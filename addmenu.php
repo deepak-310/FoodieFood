@@ -1,5 +1,15 @@
 <?php
 session_start();
+session_start();
+if(!isset($_SESSION['type'])){
+    ?>
+        <script>
+          // alert('Login UnSuccessfully');
+          window.location.assign('login.html')
+        </script>
+          <?php
+          exit();
+}
 
 ?>
 <!DOCTYPE html>

@@ -9,8 +9,6 @@ if(!isset($_SESSION['type'])){
         <?php
         exit();
 }
-include 'backend/connection.php';
-$id=$_GET['sr'];
 
 ?>
 <!DOCTYPE html>
@@ -82,6 +80,29 @@ form{
 input{
   padding:5px;
 }
+.gender{
+    display: flex;
+    align-items: center;
+    margin-top:5px;
+ 
+}
+.gender input{
+   padding: 5px;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+}
+.gen label , .gen1 label{
+    margin-left:10px;
+}
+.gen{
+    display: flex;
+}
+.gen1{
+    display: flex;
+    margin-left:20px;
+}
+
 
 
 
@@ -114,61 +135,48 @@ input{
 </header>
 
         <!-- add button -->
-        <h1 class="heading"><a href="menus.php"><i class="fas fa-arrow-left" style="color:black;font-weight:300px;font-size:30px;  color: rgb(68, 66, 66);margin-right:10px"></i></a>Edit Food</h1>
+        <h1 class="heading"><a href="admin.php"><i class="fas fa-arrow-left" style="color:black;font-weight:300px;font-size:30px;  color: rgb(68, 66, 66);margin-right:10px"></i></a>Add Admin</h1>
         <div class="addbranch" style="display: flex;align-items: center;justify-content: center;" >
         <div class="border">
 
-    
-        <form action="backend/editmenubackend.php" method="post">
+        <form action="backend/addadminbackend.php" method="post">
           <div class="add_branch_contaner" style="box-shadow:none; ">
-          <?php
-            $query="select * from menu where id=$id";
-            $result=mysqli_query($conn,$query);
-            while($res =mysqli_fetch_array($result)){
-
-          
-         ?>
-
             <div class="ele">
-                <label for="Name"> Food Name</label><br>
-                <input type="text" name="f_name" required value="<?php echo $res['name']; ?>">
+                <label for="Name">Name</label><br>
+                <input type="text" name="uname" required >
             </div>
             <div class="ele">
-              <label>Image Link</label><br>
-              <input type="text" name="img" required  value="<?php echo $res['img']; ?>"><br>
+              <label>Email ID</label><br>
+              <input type="email" name="email" required><br>
           </div>
           <div class="ele">
-              <label>Price</label><br>
-              <input type="text" name="price"  value="<?php echo $res['price']; ?>"><br>
+              <label>Phone No</label><br>
+              <input type="number" name="phone"><br>
           </div>
           <div class="ele">
-              <label>Description</label><br>
-              <input type="text" name="dec" required  value="<?php echo $res['description']; ?>"><br>
+              <label>Password</label><br>
+              <input type="password" name="pass" required><br>
           </div>
           <div class="ele">
-            <label>Type</label><br>
-            <select style="width : 100%;height: 35px; padding: 5px;" name="type" required  value="<?php echo $res['type']; ?>">
-              <option selected>Breakfast</option>
-              <option>Drinks</option>
-              <option>South</option>
-              <option>Veg</option>
-              <option>Non-Veg</option>
-            </select>
+          <label class="lable2">Gender</label>
+            <div class="gender">
+                <div class="gen">
+                <input type="radio" name="gender"  value="male">
+                <label for="male">Male</label>
+                </div>
+                <div class="gen1">
+                <input type="radio" name="gender"  id="female" value="female">
+                <label for="female">Female</label>
+                </div>
+               
+           
+            </div>
           </div>
-          <div class="ele">
-            <label>Content</label><br>
-            <select style="width: 100%;height: 35px; padding: 5px;" name="content" required  value="<?php echo $res['content']; ?>">
-              <option selected>Veg</option>
-              <option>Non-veg</option>
-            </select>
-          </div>
-          <input type="hidden" name="id" value="<?php echo $id; ?>" >
   
         <div class="button_class">
-         <input type="submit" name="editmenu" value="EDIT" style="background-color: #3AFF71;">
+         <input type="submit" value="ADD" style="background-color: #3AFF71;">
          <input type="reset" value="Reset">
        </div>
-       <?php   } ?>
         </div>
     </form>
         </div>
@@ -176,5 +184,13 @@ input{
       
 
 </body>
+<script>
+  function checklogout(){
+    return confirm("Are you sure you want to logout?")
+  }
+  function checkdelete(){
+    return confirm("Are you sure you want to Delete this user?")
+  }
+</script>
 
 </html>

@@ -1,14 +1,16 @@
 <?php
 session_start();
 if(!isset($_SESSION['type'])){
-  ?>
-      <script>
-        // alert('Login UnSuccessfully');
-        window.location.assign('login.html')
-      </script>
-        <?php
-        exit();
+    ?>
+        <script>
+          // alert('Login UnSuccessfully');
+          window.location.assign('login.html')
+        </script>
+          <?php
+          exit();
 }
+$uid= $_SESSION["userID"];
+
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +27,11 @@ if(!isset($_SESSION['type'])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
-
     <style>
+.done_icon{
+            font-size:20px;
+            color: green;
+        }
         .edit_btn{
     border: none;
     background-color: #1C3EF1;
@@ -43,10 +48,6 @@ if(!isset($_SESSION['type'])){
     border-radius: 5px;
     cursor: pointer;
   }
-  .f_img{
-    width:90px;
-    height:70px;
-  }
   .add_food{
     width:180px;
     height:55px;
@@ -60,13 +61,12 @@ if(!isset($_SESSION['type'])){
     
   }
 
-
-</style>
+      </style>
 </head>
 <body>
     <header>
         <div class="header_left">
-            <img src="img/logo2.png">
+        <a href="admin.php"> <img src="img/logo2.png"></a>
 
         </div>
         <div class="header_right">
@@ -87,59 +87,51 @@ if(!isset($_SESSION['type'])){
 
         </div>
     </header>
-    <h1 class="Heading">Menus</h1>
-
-    <a href="addmenu.php"><button class="add_food"> Add Food </button></a>
-
+    <h1 class="Heading"><a href="admin.php"><i class="fas fa-arrow-left" style="color:black;font-weight:300px;font-size:30px;  color: rgb(68, 66, 66);margin-right:10px"></i></a>All Users</h1>
+    <a href="addadmin.php"><button class="add_food"> Add Admin </button></a>
     <div class="table_content" id="marks_table">
         <table class="Marks_entry_table">
           <tr>
-            <th>ID</th>
-            <th>Food</th>
-            <th>Food Name</th>
-            <th>Price</th>
-            <th>description</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Phone No</th>
+            <th>Admission No</th>
+            <th>Gender</th>
             <th>Type</th>
-            <th>Content</th>
             <th>Actions</th>
           </tr>
           <?php
 
             include 'backend/connection.php';
-            $selectquery ="select * from menu ";
+            $selectquery ="select * from users where id!=$uid ";
             $query= mysqli_query($conn,$selectquery);
             $nums=mysqli_num_rows($query);
-            $sr=1;
             while($res =mysqli_fetch_array($query))
             {
             ?>
             <tr>
-            <td><?php echo $sr; ?></td>
-            <td><img class="f_img" src="<?php echo $res['img']; ?>" ></td>
             <td><?php echo $res['name']; ?></td>
-            <td>₹<?php echo $res['price']; ?></td>
-            <td><?php echo $res['description']; ?></td>
-            <td><?php echo $res['type']; ?></td>
-            <td><?php echo $res['content']; ?></td>
+            <td><?php echo $res['email']; ?></td>
+            <td><?php echo $res['phone']; ?></td>
+            <td><?php echo $res['admissionNo']; ?></td>
+            <td><?php echo $res['gender']; ?></td>  
+            <td><?php echo $res['type']; ?></td>  
             <td>
-            <a href="editmenu.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" title="EDIT"><button class="edit_btn"><i class="fa-solid fa-pen"></i></button></a>
-            <a href="backend/deletefood.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" onclick="return checkdelete()"  title="DELETE"><button class="delet_btn"><i class="fa-solid fa-trash"></i></button></a>
+            <!-- <a href="editmenu.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" title="EDIT"><button class="edit_btn"><i class="fa-solid fa-pen"></i></button></a> -->
+            <a href="backend/deleteuser.php?sr=<?php echo $res['id']; ?>" data-toggle="tooltip" data-placement="bootom" onclick="return checkdelete()"  title="DELETE"><button class="delet_btn"><i class="fa-solid fa-trash"></i></button></a>
             </td>
-          </tr>
-
-           <?php
-            $sr+=1;
-            } ?>
+            </tr>
+            <?php } ?>
             
         </table>
     </div>
 </body>
 <script>
-   function checklogout(){
+  function checklogout(){
     return confirm("Are you sure you want to logout?")
   }
   function checkdelete(){
-    return confirm("Are you sure you want to Delete this FoodMenu?")
+    return confirm("Are you sure you want to Delete this user?")
   }
 </script>
 </html>

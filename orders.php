@@ -48,6 +48,10 @@ session_start();
             border: none;
             font-size: 15px;
         }
+        .done_icon{
+            font-size:20px;
+            color: green;
+        }
 
 </style>
 </head>
@@ -91,7 +95,7 @@ session_start();
             <th>Type</th>
             <th>C_Room</th>
             <th>Status</th>
-            <th>actions</th>
+            <th>Actions</th>
           </tr>
           <?php
 
@@ -126,20 +130,37 @@ session_start();
                 <td style="color:green;"><?php echo $res['status']; ?></td>
                 <?php
              }
-             else{
+             elseif($res['status']=='NotDelivery'){
                 ?>
                 <td style="color:red;"><?php echo $res['status']; ?></td>
                 <?php
+             }
+             else{
+                ?>
+                <td style="color:orange;"><?php echo $res['status']; ?></td>
+                <?php
 
+             }
+
+             if($res['status']=='Delivery' or $res['status']=='NotDelivery'){
+                ?>
+                <td> <i class="fa-solid fa-circle-check done_icon" ></i></td>
+
+                <?php
+
+             }
+             else{
+                ?>
+                <td>
+            <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=Delivery" data-toggle="tooltip" data-placement="bootom" title="Deliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn" name="Delivery"><a>
+            <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=NotDelivery" data-toggle="tooltip" data-placement="bootom" title="NotDeliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn2" name="NotDelivery"></a>
+            </td>
+            <?php
              }
              ?>
 
             
-            <td>
-            <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=Delivery" data-toggle="tooltip" data-placement="bootom" title="Deliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn" name="Delivery"><a>
-            <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=NotDelivery" data-toggle="tooltip" data-placement="bootom" title="NotDeliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn2" name="NotDelivery"></a>
-          
-            </td>
+            
           </tr>
 
            <?php } ?>

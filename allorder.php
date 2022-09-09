@@ -1,5 +1,15 @@
 <?php
+
 session_start();
+if(!isset($_SESSION['type'])){
+    ?>
+        <script>
+        //   alert('Login UnSuccessfully');
+          window.location.assign('login.html')
+        </script>
+          <?php
+          exit();
+}
 
 ?>
 
@@ -17,6 +27,13 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
+    <style>
+.done_icon{
+            font-size:20px;
+            color: green;
+        }
+
+      </style>
 </head>
 <body>
     <header>
@@ -42,7 +59,7 @@ session_start();
 
         </div>
     </header>
-    <h1 class="Heading"><a href="orders.php"><i class="fas fa-arrow-left" style="color:black;font-weight:300px;font-size:30px;  color: rgb(68, 66, 66);margin-right:10px"></i></a>Orders</h1>
+    <h1 class="Heading"><a href="orders.php"><i class="fas fa-arrow-left" style="color:black;font-weight:300px;font-size:30px;  color: rgb(68, 66, 66);margin-right:10px"></i></a>All Orders</h1>
 
     <div class="table_content" id="marks_table">
         <table class="Marks_entry_table">
@@ -98,14 +115,22 @@ session_start();
                 <?php
 
              }
-             ?>
+             if($res['status']=='Delivery' or $res['status']=='NotDelivery'){
+              ?>
+              <td> <i class="fa-solid fa-circle-check done_icon" ></i></td>
 
-            
-            <td>
-            <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=Delivery" data-toggle="tooltip" data-placement="bootom" title="Deliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn" name="Delivery"><a>
-            <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=NotDelivery" data-toggle="tooltip" data-placement="bootom" title="NotDeliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn2" name="NotDelivery"></a>
-          
-            </td>
+              <?php
+
+           }
+           else{
+              ?>
+              <td>
+          <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=Delivery" data-toggle="tooltip" data-placement="bootom" title="Deliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn" name="Delivery"><a>
+          <a href="backend/editorder.php?sr=<?php echo $res['ord_id']; ?>&status=NotDelivery" data-toggle="tooltip" data-placement="bootom" title="NotDeliverd"><input type="submit" value="" style="width:20px;height:20px;" class="edit_btn2" name="NotDelivery"></a>
+          </td>
+          <?php
+           }
+           ?>
           </tr>
 
            <?php } ?>

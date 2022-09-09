@@ -142,11 +142,11 @@ while($row=mysqli_fetch_assoc($total_r)){
                     
                 </a>
            
-             <a href="#">
+             <a href="customers.php">
                 <div class="option">
                     <div class="left_op">
                         <h2><?php echo $total_users; ?></h2>
-                        <h3>Total Customers</h3>
+                        <h3>Total Users</h3>
                     </div>
                     <div class="right_op">
                         <div class="img_op">

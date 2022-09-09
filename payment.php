@@ -54,7 +54,7 @@ foreach($_SESSION['cart'] as $key => $value){
         <h3 class="entry_head">Time Of Pickup/Delivery</h3>
         <div class="input_con">
             <label >Enter Time</label>
-            <input type="text" required="required" name="otime" placeholder="eg. 10AM">
+            <input type="time" required="required" name="otime" placeholder="eg. 10AM">
         </div>
     </div>
     <div class="ptotal_sumamry">

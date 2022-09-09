@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="stylepages/login.css">
     <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
     <style>
-        .line{
+        .line {
             margin: 0 55%;
         }
-        @media (min-width: 1020px){
-            .line{
+
+        @media (min-width: 1020px) {
+            .line {
                 margin: 0 74%;
             }
         }
-
     </style>
 </head>
 
@@ -27,56 +27,73 @@
             <img src="img/logo2.png" class="logo" />
         </div>
         <div class="option_con">
-            <a href="login.html"><h3 id="log">Login</h3></a>
+            <a href="login.html">
+                <h3 id="log">Login</h3>
+            </a>
             <h3 id="sig">Sign-up</h3>
         </div>
         <div class="line"></div>
     </div>
     <form class="form1" method="post" action="backend/signup.php">
         <div class="form_group">
-        <label class="lable1">Name</label>
-        <input type="text" name="name" placeholder="Enter Name" required="required"/>
+            <label class="lable1">Name</label>
+            <input type="text" name="name" placeholder="Enter Name" required="required" />
         </div>
         <div class="form_group">
             <label class="lable1">Email Address</label>
-            <input type="email" name="emailid" placeholder="Enter Email ID" required="required"/>
-            </div>
+            <input type="email" name="emailid" placeholder="Enter Email ID" required="required" />
+        </div>
         <div class="form_group">
             <label class="lable2">Phone Number</label>
-            <input type="number" name="phoneno" minlength="10" maxlength="10" placeholder="Enter Phone Number" required="required"/>
+            <input type="number" id="phonenum" onblur="validatenumber()" name="phoneno" minlength="10" maxlength="10"
+                placeholder="Enter Phone Number" required="required" />
         </div>
         <div class="form_group">
             <label class="lable2">Admission No</label>
-            <input type="text" id="addno" onblur="cap()" name="admission_no" placeholder="Enter Admission Number" required="required"/>
+            <input type="text" id="addno" onblur="cap()" name="admission_no" placeholder="Enter Admission Number"
+                required="required" />
         </div>
         <div class="form_group">
             <label class="lable2">Password</label>
-            <input type="password" name="password" placeholder="Enter Password" required="required"/>
+            <input type="password" name="password" placeholder="Enter Password" required="required" />
         </div>
         <div class="form_group">
             <label class="lable2">Gender</label>
             <div class="gender">
-                <input type="radio" name="gender"  value="male">
+                <input type="radio" name="gender" value="male">
                 <label for="male">Male</label>
-                <input type="radio" name="gender"  id="female" value="female">
+                <input type="radio" name="gender" id="female" value="female">
                 <label for="female">Female</label>
             </div>
             <div class="gender">
-           
+
             </div>
-            
+
         </div>
-        
+
         <button type="submit" class="login_btn">Register</button>
     </form>
 
 
 </body>
 <script>
-    function cap(){
-        var x =document.getElementById("addno");
-        x.value=x.value.toUpperCase();
+    function cap() {
+        var x = document.getElementById("addno");
+        x.value = x.value.toUpperCase();
 
+    }
+    function validatenumber() {
+        var phn = document.getElementById("phonenum").value;
+
+        if (phn.length < 10) {
+            alert('Phone No should Contain 10 numbers only');
+        }
+        else if (phn.length > 10) {
+            alert('Phone No should Contain 10 numbers only');
+        }
+        else if ((phn.charAt(0) != 9) && (phn.charAt(0) != 8) && (phn.charAt(0) != 7)) {
+            alert('Phone No Should Be Start With 9, 8 or 7 ');
+        }
     }
 </script>
 

@@ -1,5 +1,11 @@
 <?php  
+
 session_start();
+if(!isset($_SESSION["email"]))
+{
+  header("location:login.html");
+  unset($_SESSION['email']);
+}
 include 'backend/connection.php';
 $user_id= $_SESSION["userID"];
 $sql="select * from users where id='$user_id' ";

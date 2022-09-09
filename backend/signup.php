@@ -30,6 +30,14 @@ elseif(strpos($email,'student') == false){
       <?php
 
 }
+elseif(!preg_match("/^[6-9]\d{9}$/",$phone)){
+  ?>
+  <script>
+    alert('Phone number Is Invalid Pls Enter Valid number');
+    window.location.assign('../signup.html')
+  </script>
+    <?php
+}
 else{
 if (mysqli_query($conn, $query)) {
     ?>
