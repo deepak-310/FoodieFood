@@ -20,7 +20,7 @@ $paymethod=$_POST['paym'];
 $date=date('Y-m-d');
 $status="Proccessing";
 date_default_timezone_set('Asia/Kolkata');
-$Otime=date('H:i:s');
+$Otime=date('H:i:s a');
 
   if($paymethod=="COD"){
       if($divmethod=="delivery"){

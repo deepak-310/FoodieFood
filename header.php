@@ -18,7 +18,8 @@ if(isset($_SESSION['cart'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
-    <title>Document</title>
+    <title>navbar</title>
+    
 </head>
 <body>
     <header>
@@ -26,7 +27,7 @@ if(isset($_SESSION['cart'])){
             <img src="img/logo2.png"/>
         </div>
         <div class="search_con">
-            <input type="search" placeholder="search your favorite dish">
+            <input type="search" placeholder="search your favorite Food">
          
             <i class="fa-solid fa-magnifying-glass search_logo"></i>
         </div>
