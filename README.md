@@ -1,6 +1,6 @@
 <h1> Food Ordering Website For College Canteen </h1>
 
-<p> This Project is created using HTML CSS Javascript and PHP <br> It's Fully Responsive site you can use it with pc or your mobile phone also<p>
+<p> This Project is created using HTML CSS Javascript and PHP <br> It's fully Responsive website you can use it oc PC as well as Mobile Phone<p>
 
 <a href="http://foodiefood.epizy.com/" target="_blank">DEMO</a>
   
